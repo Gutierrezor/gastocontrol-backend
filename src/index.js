@@ -1,5 +1,5 @@
 import express from 'express';
-import expensesExportRouter from './routes/expensesExport.js';
+import expensesExportRouter from '../routes/expensesExport.js';
 
 const app = express();
 
