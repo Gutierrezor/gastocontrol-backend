@@ -1,6 +1,6 @@
 import express from 'express';
 import ExcelJS from 'exceljs';
-import Expense from '../models/Expense.js'; // Adjust path as needed
+import Expense from '../models/Expense.js'; // Ajusta la ruta según tu estructura
 
 const router = express.Router();
 
@@ -13,10 +13,10 @@ router.get('/export/excel', async (req, res) => {
 
     worksheet.columns = [
       { header: 'ID', key: 'id', width: 10 },
-      { header: 'Description', key: 'description', width: 30 },
-      { header: 'Amount', key: 'amount', width: 15 },
-      { header: 'Date', key: 'date', width: 20 },
-      // Add more columns as needed
+      { header: 'Descripción', key: 'description', width: 30 },
+      { header: 'Monto', key: 'amount', width: 15 },
+      { header: 'Fecha', key: 'date', width: 20 },
+      // Agrega más columnas si es necesario
     ];
 
     expenses.forEach(expense => {
@@ -25,7 +25,7 @@ router.get('/export/excel', async (req, res) => {
         description: expense.description,
         amount: expense.amount,
         date: expense.date,
-        // Add more fields as needed
+        // Agrega más campos si es necesario
       });
     });
 
@@ -41,7 +41,7 @@ router.get('/export/excel', async (req, res) => {
     await workbook.xlsx.write(res);
     res.end();
   } catch (error) {
-    res.status(500).json({ error: 'Error exporting expenses' });
+    res.status(500).json({ error: 'Error exportando gastos' });
   }
 });
 

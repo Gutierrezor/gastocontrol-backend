@@ -12,6 +12,7 @@ import historyRoutes from './routes/history.js';
 import categoryRoutes from './routes/categoryRoutes.js';
 import summaryRoutes from './routes/summaryRoutes.js';
 import limitRoutes from './routes/limitRoutes.js';
+import expensesExportRouter from './routes/expensesExport.js';
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/summary', summaryRoutes);
 app.use('/api/history', historyRoutes);
 app.use('/api/limits', limitRoutes);
+app.use('/api/expenses', expensesExportRouter);
 
 initModels(sequelize); 
 
