@@ -21,7 +21,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Rutas
 app.use('/api/auth', authRoutes);
 app.use('/api', routes);
 app.use('/api/categories', categoryRoutes);
@@ -32,7 +31,6 @@ app.use('/api/expenses', expensesExportRouter);
 
 initModels(sequelize); 
 
-// Arranca el servidor y sincroniza modelos
 sequelize.sync().then(() => {
   console.log('Modelos sincronizados con la base de datos');
   const PORT = process.env.PORT || 3000;

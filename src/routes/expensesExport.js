@@ -15,7 +15,7 @@ router.get('/export/excel', async (req, res) => {
       { header: 'ID', key: 'id', width: 10 },
       { header: 'Descripción', key: 'description', width: 30 },
       { header: 'Monto', key: 'amount', width: 15 },
-      { header: 'Fecha', key: 'date', width: 20 },
+      { header: 'Fecha', key: 'spentAt', width: 20 }, // Cambiado a spentAt
       // Agrega más columnas si es necesario
     ];
 
@@ -24,7 +24,7 @@ router.get('/export/excel', async (req, res) => {
         id: expense.id,
         description: expense.description,
         amount: expense.amount,
-        date: expense.date,
+        spentAt: expense.spentAt, // Cambiado a spentAt
         // Agrega más campos si es necesario
       });
     });
